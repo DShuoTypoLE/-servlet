@@ -35,6 +35,10 @@ public class FlowDaoImpl implements FlowDao {
         //    return 0;
         //}
         //优化
+        /**
+         * java.lang.Long cannot be cast to java.lang.Integer 注意是类型
+         * 关于上面报错问题的解决方案 详细参见笔记
+         */
         return mapList.size() > 0 ? (long) mapList.get(0).get("count") : 0;
     }
 
@@ -46,6 +50,7 @@ public class FlowDaoImpl implements FlowDao {
      */
     @Override
     public List<Flow> flowList(int i) {
+        //select * from table_name limit [offset，] rows
         String sql = "select * from view_flow order by rand() limit ?";
         List<Flow> flowList = new ArrayList<Flow>();
 
@@ -142,6 +147,11 @@ public class FlowDaoImpl implements FlowDao {
         return flowList;
     }
 
+    /**
+     * 根据鲜花id查询单个鲜花
+     * @param flowId
+     * @return
+     */
     @Override
     public Flow findFlowById(int flowId) {
         String sql = "select * from view_flow where flowId = ?";

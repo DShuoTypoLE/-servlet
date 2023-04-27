@@ -131,13 +131,14 @@
 		$(".prePage").attr("disabled","disabled");
 	}
 	if("${pageBean.curPage}"=="${pageBean.pageCount}"){
-		$(".page-go").attr("disabled","disabled");
+		//我感觉当前页如果在最后一页,应当也可以跳转(往前跳)
+		// $(".page-go").attr("disabled","disabled");
 		$(".nextPage").attr("disabled","disabled");
 		$(".lastPage").attr("disabled","disabled");
 	}
 	//按钮事件
 	$(".homePage").click(function(){
-		window.location="${bsePath}FlowList?action=list&page=1";
+		window.location="${basePath}FlowList?action=list&page=1";
 	})
 	$(".prePage").click(function(){
 		window.location="${basePath}FlowList?action=list&page=${pageBean.prePage}";

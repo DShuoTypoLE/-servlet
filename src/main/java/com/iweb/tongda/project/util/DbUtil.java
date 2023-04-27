@@ -37,7 +37,7 @@ public class DbUtil {
 	 * @param obj	Object...obj为可变长度参数，可有可无
 	 * @return		返回受影响的行数 （int）
 	 */
-	public static int excuteUpdate(String sql,Object...obj) {
+	public static int executeUpdate(String sql,Object...obj) {
 		int row=0;
 		Connection con=DbUtil.getConnection();
 		PreparedStatement pst=null;

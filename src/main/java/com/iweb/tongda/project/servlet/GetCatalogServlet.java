@@ -50,6 +50,7 @@ public class GetCatalogServlet extends HttpServlet {
 
         //把数据放到json中返回
         json.put("catalog",catalogList);
+        //这里json是对象,要显式调用toSting()方法,不然会报错
         response.getWriter().write(json.toString());
     }
 

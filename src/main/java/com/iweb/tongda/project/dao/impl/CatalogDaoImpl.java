@@ -14,6 +14,10 @@ import java.util.Map;
  * @Date 2023-04-26 11:59
  */
 public class CatalogDaoImpl implements CatalogDao {
+    /**
+     * 获取分类列表
+     * @return
+     */
     @Override
     public List<Catalog> getCatalog() {
         String sql = "select * from s_catalog";

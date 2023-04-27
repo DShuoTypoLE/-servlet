@@ -48,7 +48,9 @@ public class ShopIndexServlet extends HttpServlet {
 
         //响应回前台
         PrintWriter writer = response.getWriter();
+        //print可以直接输出对象,所以不加toString()方法也可以
         writer.print(json);
+        //这个不加测试了一下也没有什么问题
         writer.flush();
     }
 

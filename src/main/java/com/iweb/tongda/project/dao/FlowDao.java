@@ -19,7 +19,7 @@ public interface FlowDao {
     long flowReadCount(int catalogId);
 
     /**
-     * 随机返回鲜花数量
+     * 随机返回鲜花列表
      * @param i
      * @return
      */
