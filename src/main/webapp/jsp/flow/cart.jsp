@@ -89,7 +89,7 @@
 												<span onclick="addval(this,${i.key})"
 													class="btn btn-xs btn-default"> <b>-</b>
 												</span> 
-												<input type="text" value="${i.value.quantity}" onchange="changeinput(this,${i.key})" >
+												<input type="text" value="${i.value.quantity}" onchange="changeinput(this,${i.key})" style="text-align: center" >
 												<span onclick="cutval(this,${i.key})"
 													class="btn btn-xs btn-default"> <b>+</b>
 												</span>

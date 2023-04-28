@@ -15,10 +15,9 @@ public class User {
     private String enabled;		//用户状态y启用n禁用
 
     public User() {}
-    
-    
-    
-    public User(String userName, String userPassWord) {
+
+
+	public User(String userName, String userPassWord) {
 		super();
 		this.userName = userName;
 		this.userPassWord = userPassWord;

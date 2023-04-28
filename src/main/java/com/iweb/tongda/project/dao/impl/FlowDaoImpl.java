@@ -155,6 +155,7 @@ public class FlowDaoImpl implements FlowDao {
     @Override
     public Flow findFlowById(int flowId) {
         String sql = "select * from view_flow where flowId = ?";
+        //这一步很有深意,不能直接new出来
         Flow flow = null;
 
         List<Map<String, Object>> mapList = DbUtil.executeQuery(sql,flowId);
