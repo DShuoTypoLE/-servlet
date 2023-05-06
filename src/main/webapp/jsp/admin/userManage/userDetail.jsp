@@ -51,7 +51,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-2 text-right">年龄</div>
-			<div class="col-md-10">￥${userInfo.age}</div>
+			<div class="col-md-10">${userInfo.age}</div>
 		</div>
 		<div class="row">
 			<div class="col-md-2 text-right">电话</div>

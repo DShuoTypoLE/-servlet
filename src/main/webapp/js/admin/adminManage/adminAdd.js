@@ -6,10 +6,11 @@
 	form.addRule([
 		{
 			ele:"#userName",
-		    datatype:"/^[a-zA-Z]{1}[a-zA-Z0-9]{3,7}$/",
+		    // datatype:"/^[a-zA-Z]{1}[a-zA-Z0-9]{3,7}$/",
+		    datatype:"s4-8",
 		    ajaxurl:"jsp/admin/AdminManageServlet?action=find",
 		    nullmsg:"请输入用户名！",
-		    errormsg:"用户名以字母开头，4-8个字符，请重新输入！"
+		    errormsg:"用户名为4-8个字符，请重新输入！"
 		},
 		{
 			ele:"#passWord",

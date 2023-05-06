@@ -129,7 +129,7 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-md-2  control-label col-md-offset-2">
+				<label class="col-md-2  control-label col-md-offset-2" style="margin-left:390px;">
 					<input class="btn btn-success btn-block" type="submit" value="更改">
 				</label>
 				<label class="col-md-2 control-label">

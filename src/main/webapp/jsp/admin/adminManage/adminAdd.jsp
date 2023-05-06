@@ -32,7 +32,7 @@
 	<div class="container">
 		
 		<h2 class="text-center">用户增加</h2>
-		<form id="myForm" action="jsp/admin/AdminManageServlet?action=add" method="post" class="form-horizontal"">
+		<form id="myForm" action="jsp/admin/AdminManageServlet?action=add" method="post" class="form-horizontal">
 				<div class="form-group">
 					<label for="userName" class="col-sm-2 col-sm-offset-2 control-label">用户名：</label>
 					<div class="col-sm-4">
@@ -71,7 +71,7 @@
 				</div>
 			
 				<div class="form-group">
-					<label class="col-sm-2 col-sm-offset-2 control-label">
+					<label class="col-sm-2 col-sm-offset-2 control-label" style="margin-left:390px;">
 						<input class="btn btn-success btn-block" type="submit" value="提交">
 					</label>
 					<label class="col-sm-2 control-label">

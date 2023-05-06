@@ -33,7 +33,7 @@
 			<div class="search col-md-4">
 						<div class="input-group">
 							<form action="jsp/admin/UserManageServlet" method="get">
-								<input type="hidden" value="seach" name="action">
+								<input type="hidden" value="search" name="action">
 		     	 				<input style="float: left;width: 160px;" type="text" class="form-control" name="username" placeholder="输入要搜索的用户名...">
 		       					&nbsp;&nbsp;&nbsp;
 		       					<input style="float: left;width: 45px;" class="btn btn-default" type="submit" value="Go!"/>
