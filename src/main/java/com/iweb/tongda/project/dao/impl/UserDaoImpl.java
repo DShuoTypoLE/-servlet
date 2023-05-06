@@ -65,4 +65,20 @@ public class UserDaoImpl implements UserDao {
         }
         return user1;
     }
+
+    /**
+     * 根据userId查询user
+     * @param userId
+     * @return
+     */
+    @Override
+    public User findUserByUserId(int userId) {
+        String sql = "select * from s_user where userId = ?";
+        List<Map<String, Object>> mapList = DbUtil.executeQuery(sql, userId);
+        User user = null;
+        if (mapList.size() > 0) {
+            user = new User(mapList.get(0));
+        }
+        return user;
+    }
 }

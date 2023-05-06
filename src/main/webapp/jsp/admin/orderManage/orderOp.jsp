@@ -29,7 +29,7 @@
 			<div class="search col-md-4"> 
 						<div class="input-group">
 							<form action="jsp/admin/OrderManageServlet" method="get">
-								<input type="hidden" value="seach1" name="action">
+								<input type="hidden" value="search1" name="action">
 		     	 				<input style="float: left;width: 160px;" type="text" class="form-control" name="ordername" placeholder="输入要搜索的订单号...">
 		       					&nbsp;&nbsp;&nbsp;
 		       					<input style="float: left;width: 45px;" class="btn btn-default" type="submit" value="Go!"/>

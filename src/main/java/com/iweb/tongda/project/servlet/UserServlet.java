@@ -83,7 +83,7 @@ public class UserServlet extends HttpServlet {
                 //判断用户是否可以登录,是否锁定
                 if ("y".equals(user1.getEnabled())) {
                     //将登陆的用户信息放入session
-                    request.getSession().setAttribute("landing",user1);
+                    request.getSession().setAttribute(LANDING,user1);
                     json.put("status","y");
                 }else {
                     json.put("info","用户被禁用,请联系管理员~");
@@ -156,7 +156,7 @@ public class UserServlet extends HttpServlet {
                 //判断用户是否可以登录,是否锁定
                 if ("y".equals(user1.getEnabled())) {
                     //将登陆的用户信息放入session
-                    request.getSession().setAttribute("landing",user1);
+                    request.getSession().setAttribute(LANDING,user1);
                     //重定向到首页
                     response.sendRedirect(INDEX_PATH);
                 }else {

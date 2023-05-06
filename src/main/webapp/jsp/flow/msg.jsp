@@ -104,7 +104,9 @@ function submits(){
         },
         type:"POST",
         success:function(data){
-            alert("留言成功")
+            alert("留言成功");
+            //这里跳转一下首页,不然感觉好奇怪...
+            window.location.href = "jsp/flow/index.jsp";
         }
     })
     return false

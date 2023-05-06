@@ -12,6 +12,18 @@ public class Msg {
     public Msg() {
     }
 
+    /**
+     * 在MsgServlet中封装对象用
+     * @param contain
+     * @param inputtime
+     * @param inputperson
+     */
+    public Msg(String contain, String inputtime, String inputperson) {
+        this.contain = contain;
+        this.inputtime = inputtime;
+        this.inputperson = inputperson;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -119,7 +119,7 @@ public class CartServlet extends HttpServlet {
         //获取session中的shopCart内容,有的话就将新的放进去
         HttpSession session = request.getSession();
         //如果没有就创建一个购物车对象,然后将信息放进去
-        Cart shopCart = (Cart) request.getSession().getAttribute("shopCart");
+        Cart shopCart = (Cart) session.getAttribute("shopCart");
 
         //判断
         if (shopCart == null) {
