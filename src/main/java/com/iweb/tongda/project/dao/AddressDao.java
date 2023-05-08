@@ -13,4 +13,11 @@ public interface AddressDao {
      * @return
      */
     Address getAddress();
+
+    /**
+     * 修改地区信息
+     * @param address
+     * @return
+     */
+    boolean updateAddress(Address address);
 }

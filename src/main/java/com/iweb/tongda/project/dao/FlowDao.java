@@ -1,5 +1,6 @@
 package com.iweb.tongda.project.dao;
 
+import com.iweb.tongda.project.bean.Catalog;
 import com.iweb.tongda.project.bean.Flow;
 import com.iweb.tongda.project.bean.PageBean;
 
@@ -59,4 +60,62 @@ public interface FlowDao {
      * @return
      */
     Flow findFlowById(int flowId);
+
+    /**
+     * 根据鲜花名判断鲜花是否存在
+     * @param flowname
+     * @return
+     */
+    boolean findFlowByFlowname(String flowname);
+
+    /**
+     * 添加花卉
+     * @param flow
+     * @return
+     */
+    boolean addFlow(Flow flow);
+
+    /**
+     * 根据鲜花id查询当前鲜花分类信息
+     * @param flowId
+     * @return
+     */
+    Catalog getCatalogByFlowId(int flowId);
+
+    /**
+     * 根据鲜花id修改鲜花表中的图片id
+     * @param flowId
+     * @param imgId
+     * @return
+     */
+    boolean updateImgIdAtFlow(int flowId,int imgId);
+
+    /**
+     * 修改鲜花信息
+     * @param flow
+     * @return
+     */
+    boolean updateFlow(Flow flow);
+
+    /**
+     * 根据鲜花id删除单个鲜花
+     * @param flowId
+     * @return
+     */
+    boolean deleteFlowById(int flowId);
+
+    /**
+     * 根据鲜花名称模糊查询数据个数
+     * @param flowName
+     * @return
+     */
+    long readFlowCountByLike(String flowName);
+
+    /**
+     * 根据鲜花名称模糊查询鲜花列表信息
+     * @param pageBean
+     * @param flowName
+     * @return
+     */
+    List<Flow> findFlowByLike(PageBean pageBean, String flowName);
 }

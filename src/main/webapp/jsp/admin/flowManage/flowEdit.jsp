@@ -32,7 +32,7 @@
         	width: 100px;
         	height:100px;
         	background:url("images/flow/noneImg.jpg") no-repeat center;
-        	background-size: 290px;
+        	background-size: 120px;
         }
         .row{
         	margin-top:10px;
@@ -50,7 +50,7 @@
     	<div class="col-sm-2 col-sm-offset-2 text-right">鲜花图片</div>
     	<div class="col-sm-4 ">
     		<div class="img-box" onclick="javascript:upImg()">
-    			<img alt="" height="100px" src="${flowInfo.upLoadImg.imgSrc}" >
+    			<img alt="" height="100px" src="${flowInfo.upLoadImg.imgSrc}">
     		</div>
     		<span id="imgSpan">点击图片更改图片</span>
     		<form id="imgForm" action="jsp/admin/FlowManageServlet?action=updateImg&id=${flowInfo.flowId}" method="post" enctype="multipart/form-data">
@@ -114,7 +114,7 @@
             <span class="col-sm-4 ckerr">*选填</span>
         </div>
         <div class="form-group">
-            <label class="col-sm-2 col-sm-offset-2 control-label">
+            <label class="col-sm-2 col-sm-offset-2 control-label" style="margin-left:390px;">
                 <input class="btn btn-success btn-block" type="submit" value="提交">
             </label>
             <label class="col-sm-2 control-label">

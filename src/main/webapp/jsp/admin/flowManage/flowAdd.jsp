@@ -84,7 +84,7 @@
 				<div class="col-sm-4 Validform_checktip">*选填</div>
 			</div>
 			<div class="form-group">
-					<label class="col-sm-2 col-sm-offset-2 control-label">
+					<label class="col-sm-2 col-sm-offset-2 control-label" style="margin-left:390px;">
 						<input class="btn btn-success btn-block" type="submit" value="提交">
 					</label>
 					<label class="col-sm-2 control-label">

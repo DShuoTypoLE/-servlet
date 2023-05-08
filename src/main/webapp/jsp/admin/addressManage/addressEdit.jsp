@@ -50,6 +50,9 @@
 </head>
 <body>
 <div class="container">
+    <c:if test="${!empty addressMessage}">
+        <h3 class="text-center">${addressMessage}</h3>
+    </c:if>
     <h2 class="text-center">设置配送区域</h2>
 
     <h3>
@@ -57,7 +60,7 @@
     </h3>
 
 
-    <form id="catalogAddForm" class="form-horizontal" action="jsp/admin/AddressServlet?action=edit" method="post">
+    <form id="catalogAddForm" class="form-horizontal" action="jsp/admin/AddressServlet?action=update" method="post">
         <div class="form-group">
             <label for="province" class="col-sm-2 col-sm-offset-2 control-label">请选择省份</label>
             <div class="col-sm-4 ">

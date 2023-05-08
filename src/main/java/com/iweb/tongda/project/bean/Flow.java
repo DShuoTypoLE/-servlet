@@ -17,6 +17,22 @@ public class Flow {
 	private Catalog catalog = new Catalog();
 	private UpLoadImg upLoadImg = new UpLoadImg();
 
+	public Flow(String flowName, double price, String description, int catalogId, String keywords) {
+		this.flowName = flowName;
+		this.price = price;
+		this.description = description;
+		this.catalogId = catalogId;
+		this.keywords = keywords;
+	}
+
+	public Flow(int flowId, double price, String description, int catalogId, String keywords) {
+		this.flowId = flowId;
+		this.price = price;
+		this.description = description;
+		this.catalogId = catalogId;
+		this.keywords = keywords;
+	}
+
 	public String getKeywords() {
 		return keywords;
 	}

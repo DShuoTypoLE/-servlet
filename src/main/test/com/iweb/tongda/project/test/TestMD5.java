@@ -1,7 +1,7 @@
 package com.iweb.tongda.project.test;
 
 import com.iweb.tongda.project.util.SaltMD5Util;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 
 /**

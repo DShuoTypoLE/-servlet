@@ -1,5 +1,6 @@
 package com.iweb.tongda.project.dao.impl;
 
+import com.iweb.tongda.project.bean.Catalog;
 import com.iweb.tongda.project.bean.Flow;
 import com.iweb.tongda.project.bean.PageBean;
 import com.iweb.tongda.project.dao.FlowDao;
@@ -149,6 +150,7 @@ public class FlowDaoImpl implements FlowDao {
 
     /**
      * 根据鲜花id查询单个鲜花
+     *
      * @param flowId
      * @return
      */
@@ -158,10 +160,144 @@ public class FlowDaoImpl implements FlowDao {
         //这一步很有深意,不能直接new出来
         Flow flow = null;
 
-        List<Map<String, Object>> mapList = DbUtil.executeQuery(sql,flowId);
+        List<Map<String, Object>> mapList = DbUtil.executeQuery(sql, flowId);
         if (mapList.size() > 0) {
             flow = new Flow(mapList.get(0));
         }
         return flow;
+    }
+
+    /**
+     * 根据鲜花名判断鲜花是否存在
+     *
+     * @param flowname
+     * @return
+     */
+    @Override
+    public boolean findFlowByFlowname(String flowname) {
+        String sql = "select * from s_flow where flowName = ?";
+        List<Map<String, Object>> mapList = DbUtil.executeQuery(sql, flowname);
+        return mapList.size() > 0 ? true : false;
+    }
+
+    /**
+     * 添加花卉
+     *
+     * @param flow
+     * @return
+     */
+    @Override
+    public boolean addFlow(Flow flow) {
+        String sql = "insert into s_flow(catalogId," +
+                "flowName," +
+                "price," +
+                "description," +
+                "imgId," +
+                "addTime," +
+                "keywords) values(?,?,?,?,?,?,?)";
+        int i = DbUtil.executeUpdate(sql,
+                flow.getCatalogId(),
+                flow.getFlowName(),
+                flow.getPrice(),
+                flow.getDescription(),
+                flow.getImgId(),
+                flow.getAddTime(),
+                flow.getKeywords());
+        return i > 0 ? true : false;
+    }
+
+    /**
+     * 根据鲜花id查询当前鲜花分类信息
+     * @param flowId
+     * @return
+     */
+    @Override
+    public Catalog getCatalogByFlowId(int flowId) {
+        String sql = "select catalogId,catalogName from view_flow where flowId = ?";
+        List<Map<String, Object>> mapList = DbUtil.executeQuery(sql, flowId);
+        Catalog catalog = null;
+        if (mapList.size() > 0){
+            catalog = new Catalog(mapList.get(0));
+        }
+        return catalog;
+    }
+
+    /**
+     * 根据鲜花id修改鲜花表中的图片id
+     * @param flowId
+     * @param imgId
+     * @return
+     */
+    @Override
+    public boolean updateImgIdAtFlow(int flowId,int imgId) {
+        String sql = "update s_flow set imgId = ? where flowID = ?";
+        int i = DbUtil.executeUpdate(sql, imgId, flowId);
+        return i > 0 ? true: false;
+    }
+
+    /**
+     * 修改鲜花信息
+     * @param flow
+     * @return
+     */
+    @Override
+    public boolean updateFlow(Flow flow) {
+        String sql = "update s_flow set price = ?," +
+                "description = ?," +
+                "catalogId = ?," +
+                "keywords = ? where flowID = ?";
+        int i = DbUtil.executeUpdate(sql,
+                flow.getPrice(),
+                flow.getDescription(),
+                flow.getCatalogId(),
+                flow.getKeywords(),
+                flow.getFlowId());
+        return i > 0 ? true: false;
+    }
+
+    /**
+     * 根据鲜花id删除单个鲜花
+     * @param flowId
+     * @return
+     */
+    @Override
+    public boolean deleteFlowById(int flowId) {
+        String sql = "delete from s_flow where flowID = ?";
+        int i = DbUtil.executeUpdate(sql, flowId);
+        return i > 0 ? true: false;
+    }
+
+    /**
+     * 根据鲜花名称模糊查询数据个数
+     * @param flowName
+     * @return
+     */
+    @Override
+    public long readFlowCountByLike(String flowName) {
+        String sql = "select count(*) as count from s_flow where flowName like '%"+flowName+"%'";
+        List<Map<String, Object>> mapList = DbUtil.executeQuery(sql);
+        return mapList.size() > 0 ? (long) mapList.get(0).get("count") : 0;
+    }
+
+    /**
+     * 根据鲜花名称模糊查询鲜花列表信息
+     * @param pageBean
+     * @param flowName
+     * @return
+     */
+    @Override
+    public List<Flow> findFlowByLike(PageBean pageBean, String flowName) {
+        String sql = "select * from view_flow where flowName like '%"+flowName+"%' limit ?,?";
+        List<Map<String, Object>> mapList = DbUtil.executeQuery(sql,
+                (pageBean.getCurPage() - 1) * pageBean.getMaxSize(),
+                pageBean.getMaxSize());
+        List<Flow> list = new ArrayList<Flow>();
+        if (mapList.size() > 0){
+            for (Map<String, Object> map : mapList) {
+                Flow flow = new Flow(map);
+                list.add(flow);
+            }
+        }
+        return list;
     }
 }

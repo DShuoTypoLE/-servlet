@@ -29,4 +29,16 @@ public class AddressDaoImpl implements AddressDao {
         }
         return address;
     }
+
+    /**
+     * 修改地区信息
+     * @param address
+     * @return
+     */
+    @Override
+    public boolean updateAddress(Address address) {
+        String sql = "update s_address set province = ?,city = ?";
+        int i = DbUtil.executeUpdate(sql,address.getProvince(),address.getCity());
+        return i > 0 ? true: false;
+    }
 }
