@@ -13,6 +13,11 @@ public class Catalog {
     public Catalog() {
     }
 
+    public Catalog(int catalogId, String catalogName) {
+        this.catalogId = catalogId;
+        this.catalogName = catalogName;
+    }
+
     public Catalog(Map<String,Object> map) {
         this.catalogId= (int) map.get("catalogId");
         this.catalogName= (String) map.get("catalogName");

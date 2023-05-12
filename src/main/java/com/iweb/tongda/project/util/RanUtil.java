@@ -22,5 +22,14 @@ public class RanUtil {
 	public static String getUUID(){
 		return UUID.randomUUID().toString().replaceAll("-", "");
 	}
+
+	public static String getChargerNo(){
+		StringBuffer stringBuffer = new StringBuffer();
+		StringBuffer buffer = null;
+		for (int i = 0; i < 13; i++) {
+			buffer = stringBuffer.append((int) (Math.random()*10));
+		}
+		return "PSY" + buffer.toString();
+	}
 	
 }

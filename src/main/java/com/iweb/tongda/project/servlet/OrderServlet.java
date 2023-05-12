@@ -44,6 +44,28 @@ public class OrderServlet extends HttpServlet {
             case "list":
                 myOrderList(request,response);
                 break;
+            case "ship":
+                //收货
+                myOrderShip(request,response);
+                break;
+        }
+    }
+
+    /**
+     * 订单收货
+     * @param request
+     * @param response
+     */
+    private void myOrderShip(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //获取前台传来的参数
+        int orderId = Integer.parseInt(request.getParameter("id"));
+        //创建OrderDao对象
+        OrderDao orderDao = new OrderDaoImpl();
+        if (orderDao.orderStatus(orderId,3)){
+            //收货成功
+            myOrderList(request, response);
+        }else {
+            System.out.println("收货过程出错啦!");
         }
     }
 

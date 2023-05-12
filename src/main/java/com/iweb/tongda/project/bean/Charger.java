@@ -13,6 +13,18 @@ public class Charger {
     public Charger() {
     }
 
+    public Charger(Integer id, String name, String phone) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+    }
+
+    public Charger(String name, String phone, String no) {
+        this.name = name;
+        this.phone = phone;
+        this.no = no;
+    }
+
     public Charger(Map<String,Object> map) {
         this.id= (int) map.get("id");
         this.name= (String) map.get("name");

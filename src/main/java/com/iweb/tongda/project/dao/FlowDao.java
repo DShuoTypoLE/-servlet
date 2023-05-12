@@ -3,6 +3,7 @@ package com.iweb.tongda.project.dao;
 import com.iweb.tongda.project.bean.Catalog;
 import com.iweb.tongda.project.bean.Flow;
 import com.iweb.tongda.project.bean.PageBean;
+import com.iweb.tongda.project.bean.UpLoadImg;
 
 import java.util.List;
 
@@ -118,4 +119,11 @@ public interface FlowDao {
      * @return
      */
     List<Flow> findFlowByLike(PageBean pageBean, String flowName);
+
+    /**
+     * 根据图片id得到图片信息
+     * @param imgId
+     * @return
+     */
+    UpLoadImg getUpLoadImg(int imgId);
 }

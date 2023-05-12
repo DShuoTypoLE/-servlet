@@ -1,6 +1,7 @@
 package com.iweb.tongda.project.dao;
 
 import com.iweb.tongda.project.bean.Charger;
+import com.iweb.tongda.project.bean.PageBean;
 
 import java.util.List;
 
@@ -22,4 +23,38 @@ public interface ChargerDao {
      * @return
      */
     Charger getChargerById(int chargerid);
+
+    /**
+     * 查询配送员数量
+     * @return
+     */
+    long allChargerCount();
+
+    /**
+     * 根据分页对象查询每页的数据
+     * @param pageBean
+     * @return
+     */
+    List<Charger> getChargerByLike(PageBean pageBean);
+
+    /**
+     * 添加配送员
+     * @param charger
+     * @return
+     */
+    boolean addCharger(Charger charger);
+
+    /**
+     * 更新配送员信息
+     * @param charger
+     * @return
+     */
+    boolean updateCharger(Charger charger);
+
+    /**
+     * 删除配送员信息
+     * @param chargerId
+     * @return
+     */
+    boolean delCharger(int chargerId);
 }

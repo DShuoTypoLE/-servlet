@@ -93,11 +93,9 @@ function submits(){
         alert('请输入留言内容')
         return
     }
-
-
     //发送留言
     $.ajax({
-        url:"jsp/admin/MsgServlet?action=add",
+        url:"MsgServlet?action=add",
         async:true,
         data:{
             contain:$("#msg").val()
@@ -111,9 +109,6 @@ function submits(){
     })
     return false
 }
-
-
-
 </script>
 </body>
 </html>

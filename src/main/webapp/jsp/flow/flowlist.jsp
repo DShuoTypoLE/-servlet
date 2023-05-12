@@ -42,7 +42,7 @@
 					<div class="search col-md-4 col-md-offset-6" style="margin-top:20px;">
 						<div class="input-group">
 							<form action="FlowList2" method="get" id="FlowList2">
-		     	 				<input style="float: left;width: 160px;" type="text" class="form-control" name="seachname" placeholder="输入要搜索鲜花">
+		     	 				<input style="float: left;width: 160px;" type="text" class="form-control" name="searchname" placeholder="输入要搜索鲜花">
 							</form>
    						</div>
 					</div>

@@ -3,6 +3,7 @@ package com.iweb.tongda.project.dao.impl;
 import com.iweb.tongda.project.bean.Catalog;
 import com.iweb.tongda.project.bean.Flow;
 import com.iweb.tongda.project.bean.PageBean;
+import com.iweb.tongda.project.bean.UpLoadImg;
 import com.iweb.tongda.project.dao.FlowDao;
 import com.iweb.tongda.project.util.DbUtil;
 
@@ -299,5 +300,21 @@ public class FlowDaoImpl implements FlowDao {
             }
         }
         return list;
+    }
+
+    /**
+     * 根据图片id得到图片信息
+     * @param imgId
+     * @return
+     */
+    @Override
+    public UpLoadImg getUpLoadImg(int imgId) {
+        String sql = "select * from s_uploadimg where imgId = ?";
+        List<Map<String, Object>> mapList = DbUtil.executeQuery(sql, imgId);
+        UpLoadImg upLoadImg = null;
+        if (mapList.size() > 0) {
+            upLoadImg = new UpLoadImg(mapList.get(0));
+        }
+        return upLoadImg;
     }
 }
